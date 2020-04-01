@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+#url = "https://pypi.org/simple"
+url = "https://pypi.mirrors.ustc.edu.cn/simple/"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+django-lb-workflow = {git = "https://github.com/vicalloy/django-lb-workflow.git", extras=["options"]}
+
+[requires]
+python_version = "3.7"
