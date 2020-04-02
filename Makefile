@@ -12,5 +12,8 @@ init:
 	cd carrot_box;python manage.py migrate
 	cd carrot_box;python manage.py bower install
 
+load_data:
+	cd carrot_box;python manage.py callfunc lbworkflow.wfdata.load_data
+
 isort:
 	isort --recursive lbworkflow
