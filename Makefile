@@ -11,9 +11,10 @@ init:
 	pipenv shell
 	python manage.py migrate
 	python manage.py bower install
+	python manage.py callfunc lbworkflow.wfdata.load_data
 
 load_data:
 	python manage.py callfunc lbworkflow.wfdata.load_data
 
 isort:
-	isort --recursive lbworkflow
+	isort --recursive carrot_box
