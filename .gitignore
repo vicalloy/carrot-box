@@ -1,6 +1,6 @@
 *.sqlite3
 vendor/
-carrot_box/collectedstatic/
+collectedstatic/
 bower_components/
 *.swp
 
