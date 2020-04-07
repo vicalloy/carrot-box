@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'carrot_box',
+    'carrot_box.param',
+    'carrot_box.hr',
+    'carrot_box.wfapp.leave',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -155,6 +158,7 @@ STATIC_URL = '/static/'
 
 LBWF_APPS = {
     'simplewf': 'lbworkflow.simplewf',
+    'leave': 'carrot_box.wfapp.leave',
 }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'collectedstatic')
@@ -201,3 +205,5 @@ COMPRESS_PRECOMPILERS = (
 )
 
 PROJECT_TITLE = 'Carrot Box'
+
+AUTH_USER_MODEL = 'hr.CarrotUser'

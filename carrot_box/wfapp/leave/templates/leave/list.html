@@ -1,0 +1,62 @@
+{% extends "base_ext.html" %}
+
+{% load crispy_forms_tags %}
+{% load bootstrap_pagination %}
+{% load lbworkflow_tags %}
+
+{% block nav_sel_node %}id-nav-leave{% endblock %}
+
+{% block right_side %}
+  <section class="content-header">
+    {% include "incs/messages.html" %}
+    <div class="right-btns">
+    </div>
+    <h1>
+      Leave
+    </h1>
+  </section>
+  <section class="content">
+    <div class="box">
+      {% if search_form %}
+      <div class="box-header">
+        <div class="input-group show-label-form">
+          {% crispy search_form %}
+        </div>
+      </div>
+      {% endif %}
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th>NO.</th>
+              <th>Created by</th>
+              <th>Start on</th>
+              <th>End on</th>
+              <th>Created on</th>
+              <th>Current operator</th>
+              <th>Activity</th>
+            </tr>
+            {% for o in object_list %}{% with pi=o.pinstance %}
+              <tr>
+                <td><a href="{% url 'wf_detail' pi.pk %}">{{ pi.no }}</a></td>
+                <td>{{ pi.created_by }}</td>
+                <td>{{ o.start_on|date:"Y-m-d H:i" }}</td>
+                <td>{{ o.end_on|date:"Y-m-d H:i" }}</td>
+                <td>{{ pi.created_on|date:"Y-m-d H:i" }}</td>
+                <td>{{ pi.get_operators_display }}</td>
+                <td>
+                  <span class="label label-{{ pi|flow_status_css_class }}">
+                    {{ pi.cur_node.name }}
+                  </span>
+                </td>
+              </tr>
+            {% endwith %}{% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="box-footer clearfix">
+        {% bootstrap_paginate page_obj %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

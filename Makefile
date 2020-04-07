@@ -2,7 +2,7 @@ run:
 	python manage.py runserver 0.0.0.0:9000
 
 test:
-	;python manage.py test carrot_box
+	python manage.py test carrot_box
 
 init:
 	pip install pipenv --upgrade
@@ -15,6 +15,11 @@ init:
 
 load_data:
 	python manage.py callfunc lbworkflow.wfdata.load_data
+
+load_sample_data:
+	python manage.py callfunc lbworkflow.wfdata.load_data
+	python manage.py callfunc carrot_box.wfdata.load_data
+	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
 
 isort:
 	isort --recursive carrot_box

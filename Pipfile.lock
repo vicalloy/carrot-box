@@ -36,7 +36,7 @@
                 "options"
             ],
             "git": "https://github.com/vicalloy/django-lb-workflow.git",
-            "ref": "902591e5e345bb72a611b64d4ca78317d2529bfc"
+            "ref": "e7f28897e55f97a4247452d54ce686ce056e8c9c"
         },
         "pytz": {
             "hashes": [
