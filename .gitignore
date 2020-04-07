@@ -2,6 +2,7 @@
 vendor/
 collectedstatic/
 bower_components/
+wfgen.py
 *.swp
 
 # Byte-compiled / optimized / DLL files
