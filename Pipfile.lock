@@ -1,12 +1,10 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "88cc6cc5150c579925ad901134bd14c835d62c2c164d2415b965046f142dbead"
+            "sha256": "f1e22f5ff48217e9ff087a68a271b34bb9b9bd7100750462a13d32c6626d5856"
         },
         "pipfile-spec": 6,
-        "requires": {
-            "python_version": "3.7"
-        },
+        "requires": {},
         "sources": [
             {
                 "name": "pypi",
@@ -36,7 +34,7 @@
                 "options"
             ],
             "git": "https://github.com/vicalloy/django-lb-workflow.git",
-            "ref": "e7f28897e55f97a4247452d54ce686ce056e8c9c"
+            "ref": "e597a647a290e4454f545fb64277a43e0eeb723b"
         },
         "pytz": {
             "hashes": [
