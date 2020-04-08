@@ -1,0 +1,16 @@
+[run]
+branch = True
+source = carrot_box
+omit =
+        */tests*
+        */migrations/*
+
+[report]
+show_missing = True
+skip_covered = True
+omit =
+        */tests*
+        */migrations/*
+
+[html]
+directory = coverage_html
