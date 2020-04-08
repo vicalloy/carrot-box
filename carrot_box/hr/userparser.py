@@ -1,8 +1,8 @@
-from lbworkflow.core.userparser import SimpleUserParser
 from django.contrib.auth import get_user_model
+from lbworkflow.core.userparser import SimpleUserParser
 
-from .models import CarrotRole
 from .models import CarrotDepartment
+from .models import CarrotRole
 
 User = get_user_model()
 
@@ -29,14 +29,6 @@ class CarrotBoxUserParser(SimpleUserParser):
         d[11:it]
         """
         return self.get_object_list(atom_str, CarrotDepartment, 'code', 'd[')
-
-    def get_department(self, atom_str):
-        """
-        d[o.dept]
-        d[o.depts]
-        d[11:it]
-        """
-        return self.get_departments(atom_str).first()
 
     def get_roles(self, role_str):
         """
