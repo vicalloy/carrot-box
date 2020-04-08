@@ -1,9 +1,9 @@
 import uuid
 
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-from django.contrib.auth.models import Permission
 from django.conf import settings as django_settings
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import Permission
+from django.db import models
 
 AUTH_USER_MODEL = getattr(django_settings, 'AUTH_USER_MODEL', 'auth.User')
 

@@ -1,9 +1,9 @@
-from lbworkflow.core.datahelper import create_user
-from lbworkflow.core.datahelper import get_or_create
 from lbworkflow.core.datahelper import create_category
 from lbworkflow.core.datahelper import create_node
 from lbworkflow.core.datahelper import create_process
 from lbworkflow.core.datahelper import create_transition
+from lbworkflow.core.datahelper import create_user
+from lbworkflow.core.datahelper import get_or_create
 
 from carrot_box.hr.models import CarrotDepartment
 from carrot_box.hr.models import CarrotRole

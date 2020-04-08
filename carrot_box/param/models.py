@@ -1,4 +1,5 @@
 import uuid
+
 from django.db import models
 from lbworkflow.core.datahelper import get_or_create
 

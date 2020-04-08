@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import CarrotRole
 from .models import CarrotDepartment
+from .models import CarrotRole
 from .models import CarrotUser
 
 

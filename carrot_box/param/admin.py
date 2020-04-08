@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import ParamType, Param
+from .models import Param
+from .models import ParamType
 
 
 class ParamInline(admin.TabularInline):

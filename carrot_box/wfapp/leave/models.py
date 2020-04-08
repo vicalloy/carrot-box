@@ -1,6 +1,6 @@
 from django.db import models
-
 from lbworkflow.models import BaseWFObj
+
 from carrot_box.param.models import Param
 
 

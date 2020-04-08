@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 from django import forms
 from lbutils import BootstrapFormHelperMixin
-
 from lbworkflow.forms import WorkflowFormMixin
 
 from .models import Leave
