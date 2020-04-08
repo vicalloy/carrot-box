@@ -1,0 +1,47 @@
+language: python
+dist: bionic
+
+cache: pip
+
+install:
+  - pip install --upgrade pip setuptools tox virtualenv coveralls
+  - npm install -g bower
+
+script:
+  - tox
+
+notifications:
+  email: false
+
+matrix:
+  include:
+    # Linting
+    - python: 3.7
+      env: TOXENV=flake8
+    - python: 3.7
+      env: TOXENV=isort
+    - python: 3.7
+      env: TOXENV=docs
+
+    # Tests
+    - python: 3.5
+      env: TOXENV=py35-django2x
+    - python: 3.6
+      env: TOXENV=py36-django2x
+    - python: 3.7
+      env: TOXENV=py37-django2x
+
+    - python: 3.6
+      env: TOXENV=py36-django30
+    - python: 3.7
+      env: TOXENV=py37-django30
+    - python: 3.8
+      env: TOXENV=py38-django30
+
+    # Future (Should be in `allow_failures`)
+    - python: 3.8
+      env: TOXENV=py38-django_trunk
+  allow_failures:
+    - env: TOXENV=py38-django_trunk
+
+after_success: coveralls
