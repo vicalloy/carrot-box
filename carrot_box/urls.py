@@ -11,6 +11,7 @@ urlpatterns = [
     path('wf/', include('lbworkflow.urls')),
     path('attachment/', include('lbattachment.urls')),
     path('select2/', include('django_select2.urls')),
+    path('impersonate/', include('impersonate.urls')),
 ]
 
 if settings.DEBUG:
