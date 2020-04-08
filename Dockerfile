@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN npm install -g bower
 RUN pip install --upgrade pip setuptools
-#RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 WORKDIR /opt
 COPY . /opt/carrot-box
