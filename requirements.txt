@@ -1,0 +1,2 @@
+coverage
+git+https://github.com/vicalloy/django-lb-workflow.git#egg=django-lb-workflow[options]
