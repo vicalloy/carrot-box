@@ -5,11 +5,13 @@ test:
 	coverage run manage.py test carrot_box
 	coverage html
 
-init:
+init-pyenv:
 	pip install pipenv --upgrade
 	pipenv --python 3
 	pipenv install -d --skip-lock
 	pipenv shell
+
+init:
 	python manage.py migrate
 	python manage.py bower install
 	python manage.py callfunc lbworkflow.wfdata.load_data
