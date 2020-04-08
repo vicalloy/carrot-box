@@ -3,8 +3,8 @@ from lbworkflow.core.datahelper import create_node
 from lbworkflow.core.datahelper import create_process
 from lbworkflow.core.datahelper import create_transition
 
-from carrot_box.param.models import create_param_type
 from carrot_box.param.models import create_param
+from carrot_box.param.models import create_param_type
 
 
 def load_data():
