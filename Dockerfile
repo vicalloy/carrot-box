@@ -11,10 +11,9 @@ RUN pip install --upgrade pip setuptools
 #RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 WORKDIR /opt
-#RUN git clone https://github.com/vicalloy/carrot-box
 COPY . /opt/carrot-box
 WORKDIR /opt/carrot-box
-RUN make init
+RUN make init-docker
 
 EXPOSE 9000
 CMD ["make", "run"]

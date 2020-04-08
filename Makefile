@@ -11,7 +11,16 @@ init:
 	pipenv install -d --skip-lock
 	pipenv shell
 	python manage.py migrate
-	python manage.py bower install --allow-root
+	python manage.py bower install
+	python manage.py callfunc lbworkflow.wfdata.load_data
+	python manage.py callfunc carrot_box.wfdata.load_data
+	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
+	python wfgen.py
+
+init-docker:
+	pip install -r requirements.txt
+	python manage.py migrate
+	python manage.py bower install
 	python manage.py callfunc lbworkflow.wfdata.load_data
 	python manage.py callfunc carrot_box.wfdata.load_data
 	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
