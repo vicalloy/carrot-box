@@ -3,7 +3,6 @@ vendor/
 collectedstatic/
 bower_components/
 coverage_html/
-wfgen.py
 *.swp
 
 # Byte-compiled / optimized / DLL files
