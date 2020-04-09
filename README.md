@@ -9,7 +9,7 @@ Carrot box is a workflow platform, it also an example of using [django-lb-workfl
 
 <img src="screenshots/detail.png" alt="Detail">
 
-<img src="screenshots/flowchart.png" style="max-width: 50%" alt="Flowchart">
+<img src="screenshots/flowchart.png" alt="Flowchart">
 
 Demo site
 ---------
