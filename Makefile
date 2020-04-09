@@ -14,6 +14,7 @@ init-pyenv:
 init:
 	python manage.py migrate
 	python manage.py bower install
+	python manage.py collectstatic --no-input
 	python manage.py callfunc lbworkflow.wfdata.load_data
 	python manage.py callfunc carrot_box.wfdata.load_data
 	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
@@ -23,6 +24,7 @@ init-docker:
 	pip install -r requirements.txt
 	python manage.py migrate
 	python manage.py bower install
+	python manage.py collectstatic --no-input
 	python manage.py callfunc lbworkflow.wfdata.load_data
 	python manage.py callfunc carrot_box.wfdata.load_data
 	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
