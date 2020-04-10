@@ -3,5 +3,11 @@
 {% block header_nav_left %}
   <ul class="nav navbar-nav">
     <li><a href="https://github.com/vicalloy/carrot-box">Fork me on GitHub</a></li>
+    {% if user.is_superuser %}
+    <li><a href="{% url 'impersonate-list' %}">Switch user</a></li>
+    {% endif %}
+    {% if user.is_impersonate %}
+    <li><a href="{% url 'impersonate-stop' %}">Stop impersonate</a></li>
+    {% endif %}
   </ul>
 {% endblock %}

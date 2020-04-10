@@ -149,7 +149,6 @@ STRONGHOLD_PUBLIC_URLS = [
 ]
 LOGIN_URL = '/admin/login/'
 LOGOUT_URL = '/admin/logout/'
-IMPERSONATE_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL_ = '/media/'
@@ -215,3 +214,8 @@ LBWF_USER_PARSER = 'carrot_box.hr.userparser.CarrotBoxUserParser'
 AUTHENTICATION_BACKENDS = (
     'carrot_box.hr.backends.CarrotModelBackend',
 )
+
+IMPERSONATE = {
+    'REDIRECT_URL': '/',
+    'PAGINATE_COUNT': 20,
+}
