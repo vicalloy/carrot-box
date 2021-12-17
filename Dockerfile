@@ -4,15 +4,18 @@ MAINTAINER vicalloy "https://github.com/vicalloy"
 RUN apt-get update && apt-get install -y \
 		npm \
 		pkg-config \
-	--no-install-recommends && rm -rf /var/lib/apt/lists/*
+	  --no-install-recommends && \
+		rm -rf /var/lib/apt/lists/* && \
+		npm install -g yarn
 
-RUN npm install -g bower
-RUN pip install --upgrade pip setuptools
+RUN pip install --upgrade pip setuptools pipenv
 
-WORKDIR /opt
-COPY . /opt/carrot-box
-WORKDIR /opt/carrot-box
-RUN make init-docker
+RUN mkdir /app
+WORKDIR /app
+
+COPY ./ ./
+RUN pipenv install -d --skip-lock --system
+RUN make init
 
 EXPOSE 9000
 CMD ["make", "run"]

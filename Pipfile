@@ -1,12 +1,11 @@
 [[source]]
 name = "pypi"
-#url = "https://pypi.org/simple"
-url = "https://mirrors.aliyun.com/pypi/simple/"
+url = "https://pypi.org/simple"
+# url = "https://mirrors.aliyun.com/pypi/simple/"
 verify_ssl = true
 
 [packages]
-django = "*"
-django-lb-workflow = {git = "https://github.com/vicalloy/django-lb-workflow.git", extras=["options"]}
+django-lb-workflow = {version=">=1.0.3", extras=["options"]}
 
 [dev-packages]
 coverage = "*"

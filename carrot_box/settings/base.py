@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'impersonate',
     'crispy_forms',
     'compressor',
-    'djangobower',
     'django_select2',
     'bootstrap_pagination',
 
@@ -167,34 +166,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collectedstatic')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'node_modules'),
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-# bower
-BOWER_COMPONENTS_ROOT = BASE_DIR
-
-BOWER_INSTALLED_APPS = (
-    'admin-lte#2.3.11',
-    'font-awesome#4.7.0',
-    'ionicons#2.0.1',
-
-    'modernizr',
-    # POLYFILLS: javascript fallback solutions for older browsers.
-    # CSS3 selectors for IE 6-8.
-    'selectivizr',
-    # min/max width media queries for IE 6-8.
-    'respond',
-    # CSS3 styles for IE 6-8.
-    'pie',
-    # HTML5 tag support for IE 6-8.
-    'html5shiv',
-
-    'masonry#4.1.1',
-    'blueimp-file-upload#9.12.5',
-    'flatpickr-calendar#2.5.6',
-)
 
 # django-compressor
 STATICFILES_FINDERS += (('compressor.finders.CompressorFinder'),)
@@ -219,3 +197,5 @@ IMPERSONATE = {
     'REDIRECT_URL': '/',
     'PAGINATE_COUNT': 20,
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

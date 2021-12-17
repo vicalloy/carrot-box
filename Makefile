@@ -12,18 +12,8 @@ init-pyenv:
 	pipenv shell
 
 init:
+	yarn install
 	python manage.py migrate
-	python manage.py bower install
-	python manage.py collectstatic --no-input
-	python manage.py callfunc lbworkflow.wfdata.load_data
-	python manage.py callfunc carrot_box.wfdata.load_data
-	python manage.py callfunc carrot_box.wfapp.leave.wfdata.load_data
-	python wfgen.py
-
-init-docker:
-	pip install -r requirements.txt
-	python manage.py migrate
-	python manage.py bower install
 	python manage.py collectstatic --no-input
 	python manage.py callfunc lbworkflow.wfdata.load_data
 	python manage.py callfunc carrot_box.wfdata.load_data
@@ -49,7 +39,7 @@ wfgen_clean:
 
 
 build_docker_image:
-	docker build -t carrot-box:0.9 .
+	docker build -t carrot-box:latest .
 
 create_docker_container:
-	docker run -d -p 9000:9000 --name carrot-box carrot-box:0.9
+	docker run -d -p 9000:9000 --name carrot-box carrot-box:latest

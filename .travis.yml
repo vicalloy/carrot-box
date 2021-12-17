@@ -5,7 +5,6 @@ cache: pip
 
 install:
   - pip install --upgrade pip setuptools tox virtualenv coveralls
-  - npm install -g bower
 
 script:
   - tox

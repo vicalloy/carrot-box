@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class HrConfig(AppConfig):
-    name = 'hr'
+    name = 'carrot_box.hr'
